@@ -1,0 +1,13 @@
+{
+  "name": "similarity-transformation",
+  "version": "0.0.1",
+  "description": "Implementation of Shinji Umeyama's similarity transformation algorithm",
+  "module": "main.js",
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "ml-matrix": "^6.8.2"
+  },
+  "repository": "https://github.com/shaileshpandit/similarity-transformation-js.git",
+  "author": "Shailesh Pandit <shailesh.pandit@gmail.com>",
+  "license": "MIT"
+}

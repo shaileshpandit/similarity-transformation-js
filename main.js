@@ -50,7 +50,9 @@
  *   reflected to achieve a better mean squared error.
  * @returns {mlMatrix.Matrix}
  */
-function getSimilarityTransformation(fromPoints,
+import * as mlMatrix from 'ml-matrix';
+
+export function getSimilarityTransformation(fromPoints,
                                      toPoints,
                                      allowReflection = false) {
     const dimensions = fromPoints.rows;
@@ -96,11 +98,11 @@ function getSimilarityTransformation(fromPoints,
         mlMatrix.Matrix.mul(rotation.mmul(fromMean), scale));
 
     // 4. Transform the points.
-    const transformedPoints = mlMatrix.Matrix.add(
-        mlMatrix.Matrix.mul(rotation.mmul(fromPoints), scale),
-        translation.repeat({columns: numPoints}));
+    // const transformedPoints = mlMatrix.Matrix.add(
+    //     mlMatrix.Matrix.mul(rotation.mmul(fromPoints), scale),
+    //     translation.repeat({ columns: numPoints }));
 
-    return transformedPoints;
+    return { rotation, scale, translation, fromMean, toMean };
 }
 
 /**
